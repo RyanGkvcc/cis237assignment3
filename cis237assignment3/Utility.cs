@@ -13,7 +13,15 @@ namespace cis237assignment3
         protected Boolean computerConnection;
         protected Boolean arm;
 
-        private Decimal someNumber;
+        private const Decimal TOOLBOX_PRICE = 1m;
+        private const Decimal COMPUTERCONNECTION_PRICE = 3m;
+        private const Decimal ARM_PRICE = 5m;
+
+        private Int32 toolboxOption;
+        private Int32 computerConnectionOption;
+        private Int32 armOption;
+
+        //private Decimal someNumber;
 
         //6 parameter Constructor that uses the parent's constructor to do some of the work
         public Utility(String material, String model, String color, Boolean toolbox, Boolean computerConnection, Boolean arm) : base(material, model, color)
@@ -23,31 +31,56 @@ namespace cis237assignment3
             this.arm = arm;
         }
 
-        //Public property for the CalculateTotalCost backing field
-        public Decimal CalculateTotalCost
-        {
-            get
-            {
-                someNumber = 0m;
-                if (toolbox)
-                {
-                    someNumber += 1m;
-                }
-                if (computerConnection)
-                {
-                    someNumber += 1m;
-                }
-                if (arm)
-                {
-                    someNumber += 1m;
-                }
-                return this.someNumber;
-            }
-        }
-
+        //Public override of the ToString method. It uses the parent's
+        //ToString method to get some of it's work done.
         public override String ToString()
         {
-            return base.ToString() + " " + this.CalculateTotalCost.ToString("C");
+            return base.ToString() + "Toolbox: " + toolboxOption.ToString("N") + " @ " + TOOLBOX_PRICE.ToString("C") + Environment.NewLine +
+                "Computer Connection: " + computerConnectionOption.ToString("N") + " @ " + COMPUTERCONNECTION_PRICE.ToString("C") + Environment.NewLine +
+                "Arm: " + armOption.ToString("N") + " @ " + ARM_PRICE.ToString("C") + Environment.NewLine +
+                "Total Cost: " + this.totalCost.ToString("C");
+        }
+
+        //Public override method to override the virtual Calculate Total Cost Droid method.
+        public override void CalculateTotalCost()
+        {
+            toolboxOption = 0;
+            computerConnectionOption = 0;
+            armOption = 0;
+
+            if (toolbox)
+            {
+                toolboxOption = 1;
+                this.totalCost += TOOLBOX_PRICE;
+            }
+            if (computerConnection)
+            {
+                computerConnectionOption = 1;
+                this.totalCost += COMPUTERCONNECTION_PRICE;
+            }
+            if (arm)
+            {
+                armOption = 1;
+                this.totalCost += ARM_PRICE;
+            }
+
+            //get
+            //{
+            //    someNumber = 0m;
+            //    if (toolbox)
+            //    {
+            //        someNumber += 1m;
+            //    }
+            //    if (computerConnection)
+            //    {
+            //        someNumber += 1m;
+            //    }
+            //    if (arm)
+            //    {
+            //        someNumber += 1m;
+            //    }
+            //    return this.someNumber;
+            //}
         }
     }
 }

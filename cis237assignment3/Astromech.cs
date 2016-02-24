@@ -13,9 +13,9 @@ namespace cis237assignment3
         private Int32 numberShips;
 
         //Constant for Cost per ship
-        private const Decimal COST_PER_SHIP = 1m;
+        private const Decimal COST_PER_SHIP = 13m;
 
-        private Decimal someNumber3;
+        //private Decimal someNumber3;
 
         //8 parameter Constructor that uses the parent's constructor to do some of the work
         public Astromech(String material, String model, String color, Boolean toolbox, Boolean computerConnection, Boolean arm, Boolean fireExtinquisher, Int32 numberShips)
@@ -25,25 +25,30 @@ namespace cis237assignment3
             this.numberShips = numberShips;
         }
 
-        //Public property for the CalculateTotalCost backing field
-        public Decimal CalculateTotalCost3
-        {
-            get
-            {
-                someNumber3 = 0m;
-                if (fireExtinquisher)
-                {
-                    someNumber3 += 1m;
-                }
-                return this.someNumber3;
-            }
-        }
-
         //Public override of the ToString method. It uses the parent's
-        //toString method to get some of it's work done.
+        //ToString method to get some of it's work done.
         public override String ToString()
         {
-            return base.ToString() + " " + this.CalculateTotalCost3.ToString("C");
+            return base.ToString() + "Fire Extinquisher: " + this.numberShips.ToString("N") + " @ " + COST_PER_SHIP.ToString("C") + Environment.NewLine +
+                "Total Cost: " + this.totalCost.ToString("C");
+        }
+
+        //Public override method to override the virtual Calculate Total Cost Droid method.
+        public override void CalculateTotalCost()
+        {
+            if (fireExtinquisher)
+            {
+                this.totalCost += (numberShips * COST_PER_SHIP);
+            }
+            //get
+            //{
+            //    someNumber3 = 0m;
+            //    if (fireExtinquisher)
+            //    {
+            //        someNumber3 += 1m;
+            //    }
+            //    return this.someNumber3;
+            //}
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
-    class Droid
+    abstract class Droid : IDroid
     {
         //Backing fields
         protected String material;
@@ -65,7 +65,22 @@ namespace cis237assignment3
         //It overrides the default ToString that every object gets for free!
         public override String ToString()
         {
-            return this.material + " " + this.model + " " + this.color + " " + this.baseCost + " " + this.totalCost;
+            return "Color: " + this.color + Environment.NewLine + 
+                "Material: " + this.material + Environment.NewLine + 
+                "Model: " + this.model + Environment.NewLine + 
+                "Base Cost: " + this.totalCost.ToString("C") + Environment.NewLine;
+        }
+
+        public void CalculateBaseCost()
+        {
+
+        }
+
+        //This method is virtual to ensure that it can be overriden by the children classes.
+        //It assigns the base cost to the total cost.
+        public virtual void CalculateTotalCost()
+        {
+            this.totalCost = this.baseCost;
         }
     }
 }
