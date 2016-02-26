@@ -20,6 +20,7 @@ namespace cis237assignment3
             input = String.Empty;
             //Displays the first menu
             Console.WriteLine("What would you like to do?");
+            Console.WriteLine();
             Console.WriteLine("1. Add a new Droid");
             Console.WriteLine("2. Print the list of current Droids");
             Console.WriteLine("3. Exit");
@@ -36,6 +37,7 @@ namespace cis237assignment3
                 this.FirstMenu();
             }
 
+            Console.Clear();
             //A valid selection has been chosen since the user is now out of the loop
             return Int32.Parse(input);
         }
@@ -48,6 +50,13 @@ namespace cis237assignment3
             Console.WriteLine();
         }
 
+        public void DroidAddSuccess()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Your Droid build has been successful.");
+            Console.WriteLine();
+        }
+
         //Displays the menu for the user to select a type of Droid to build.
         public Int32 BeginBuild()
         {
@@ -55,6 +64,7 @@ namespace cis237assignment3
             input = String.Empty;
             //Displays the menu for the user to select a Droid type to build.
             Console.WriteLine("What type of Droid would you like to build?");
+            Console.WriteLine();
             Console.WriteLine("1. Protocol");
             Console.WriteLine("2. Utility");
             Console.WriteLine("3. Janitor");
@@ -72,6 +82,7 @@ namespace cis237assignment3
                 this.BeginBuild();
             }
 
+            Console.Clear();
             //A valid selection has been chosen since the user is now out of the loop
             return Int32.Parse(input);
         }
@@ -83,6 +94,7 @@ namespace cis237assignment3
             input = String.Empty;
             //Displays the menu for the user to select a material for their Droid.
             Console.WriteLine("What material would you like to use to build your Droid?");
+            Console.WriteLine();
             Console.WriteLine("1. Metal");
             Console.WriteLine("2. Stone");
             Console.WriteLine("3. Carbon Fiber");
@@ -131,7 +143,9 @@ namespace cis237assignment3
                     }
                 
             }
-            //returns the selected material.
+
+            Console.Clear();
+            //Returns the selected material.
             return option;
         }
 
@@ -142,6 +156,7 @@ namespace cis237assignment3
             input = String.Empty;
             //Displays the menu for the user to select a color for their Droid.
             Console.WriteLine("What color would you like your Droid to be?");
+            Console.WriteLine();
             Console.WriteLine("1. Metallic Silver");
             Console.WriteLine("2. Dusty Brown");
             Console.WriteLine("3. Stealth Black");
@@ -190,7 +205,9 @@ namespace cis237assignment3
                     }
 
             }
-            //returns the selected color.
+
+            Console.Clear();
+            //Returns the selected color.
             return option;
         }
 
@@ -215,6 +232,7 @@ namespace cis237assignment3
                 this.ProtocolNumberLanguages();
             }
 
+            Console.Clear();
             //A valid selection has been chosen since the user is now out of the loop.
             //returns the number of selected languages.
             return Int32.Parse(input);
@@ -228,25 +246,30 @@ namespace cis237assignment3
             choice = false;
             //Displays the menu for the user choose if they want a Toolbox on their Droid.
             Console.WriteLine("Would you like your Droid to have a Toolbox?");
-            Console.WriteLine("y or n");
+            Console.WriteLine();
+            Console.WriteLine("1. Yes");
+            Console.WriteLine("2. No");
             Console.WriteLine();
             //Stores the user input in string format.
             input = Console.ReadLine();
             //Validates the input or we get to try again.
-            while (input != "y" || input != "Y" || input != "n" || input != "N")
+            while (input != "1" && input != "2")
             {
                 //Tell them that they did not enter a valid choice
-                range = "(y or n).";
+                range = "(1-2).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
                 this.UtilityToolbox();
             }
 
             //A valid selection has been chosen since the user is now out of the loop.
-            if (input == "y" || input == "Y")
+            if (input == "1")
             {
                 choice = true;
             }
+
+            Console.Clear();
+            //Returns the users choice.
             return choice;
         }
 
@@ -258,25 +281,30 @@ namespace cis237assignment3
             choice = false;
             //Displays the menu for the user choose if they want a Computer Connection on their Droid.
             Console.WriteLine("Would you like your Droid to have a Computer Connection?");
-            Console.WriteLine("y or n");
+            Console.WriteLine();
+            Console.WriteLine("1. Yes");
+            Console.WriteLine("2. No");
             Console.WriteLine();
             //Stores the user input in string format.
             input = Console.ReadLine();
             //Validates the input or we get to try again.
-            while (input != "y" || input != "Y" || input != "n" || input != "N")
+            while (input != "1" && input != "2")
             {
                 //Tell them that they did not enter a valid choice
-                range = "(y or n).";
+                range = "(1-2).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
                 this.UtilityComputerConnection();
             }
 
             //A valid selection has been chosen since the user is now out of the loop.
-            if (input == "y" || input == "Y")
+            if (input == "1")
             {
                 choice = true;
             }
+
+            Console.Clear();
+            //Returns the users choice.
             return choice;
         }
 
@@ -288,25 +316,30 @@ namespace cis237assignment3
             choice = false;
             //Displays the menu for the user choose if they want a Arm on their Droid.
             Console.WriteLine("Would you like your Droid to have a Arm?");
-            Console.WriteLine("y or n");
+            Console.WriteLine();
+            Console.WriteLine("1. Yes");
+            Console.WriteLine("2. No");
             Console.WriteLine();
             //Stores the user input in string format.
             input = Console.ReadLine();
             //Validates the input or we get to try again.
-            while (input != "y" || input != "Y" || input != "n" || input != "N")
+            while (input != "1" && input != "2")
             {
                 //Tell them that they did not enter a valid choice
-                range = "(y or n).";
+                range = "(1-2).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
                 this.UtilityArm();
             }
 
             //A valid selection has been chosen since the user is now out of the loop.
-            if (input == "y" || input == "Y")
+            if (input == "1")
             {
                 choice = true;
             }
+
+            Console.Clear();
+            //Returns the users choice.
             return choice;
         }
 
@@ -318,25 +351,30 @@ namespace cis237assignment3
             choice = false;
             //Displays the menu for the user choose if they want a Trash Compactor on their Droid.
             Console.WriteLine("Would you like your Droid to have a Trash Compactor?");
-            Console.WriteLine("y or n");
+            Console.WriteLine();
+            Console.WriteLine("1. Yes");
+            Console.WriteLine("2. No");
             Console.WriteLine();
             //Stores the user input in string format.
             input = Console.ReadLine();
             //Validates the input or we get to try again.
-            while (input != "y" || input != "Y" || input != "n" || input != "N")
+            while (input != "1" && input != "2")
             {
                 //Tell them that they did not enter a valid choice
-                range = "(y or n).";
+                range = "(1-2).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
                 this.JanitorTrashCompactor();
             }
 
             //A valid selection has been chosen since the user is now out of the loop.
-            if (input == "y" || input == "Y")
+            if (input == "1")
             {
                 choice = true;
             }
+
+            Console.Clear();
+            //Returns the users choice.
             return choice;
         }
 
@@ -348,25 +386,30 @@ namespace cis237assignment3
             choice = false;
             //Displays the menu for the user choose if they want a Vacuum on their Droid.
             Console.WriteLine("Would you like your Droid to have a Vacuum?");
-            Console.WriteLine("y or n");
+            Console.WriteLine();
+            Console.WriteLine("1. Yes");
+            Console.WriteLine("2. No");
             Console.WriteLine();
             //Stores the user input in string format.
             input = Console.ReadLine();
             //Validates the input or we get to try again.
-            while (input != "y" || input != "Y" || input != "n" || input != "N")
+            while (input != "1" && input != "2")
             {
                 //Tell them that they did not enter a valid choice
-                range = "(y or n).";
+                range = "(1-2).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
                 this.JanitorVacuum();
             }
 
             //A valid selection has been chosen since the user is now out of the loop.
-            if (input == "y" || input == "Y")
+            if (input == "1")
             {
                 choice = true;
             }
+
+            Console.Clear();
+            //Returns the users choice.
             return choice;
         }
 
@@ -378,25 +421,30 @@ namespace cis237assignment3
             choice = false;
             //Displays the menu for the user choose if they want a Fire Extinquisher on their Droid.
             Console.WriteLine("Would you like your Droid to have a Fire Extinquisher?");
-            Console.WriteLine("y or n");
+            Console.WriteLine();
+            Console.WriteLine("1. Yes");
+            Console.WriteLine("2. No");
             Console.WriteLine();
             //Stores the user input in string format.
             input = Console.ReadLine();
             //Validates the input or we get to try again.
-            while (input != "y" || input != "Y" || input != "n" || input != "N")
+            while (input != "1" && input != "2")
             {
                 //Tell them that they did not enter a valid choice
-                range = "(y or n).";
+                range = "(1-2).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
                 this.AstromechFireExtinquisher();
             }
 
             //A valid selection has been chosen since the user is now out of the loop.
-            if (input == "y" || input == "Y")
+            if (input == "1")
             {
                 choice = true;
             }
+
+            Console.Clear();
+            //Returns the users choice.
             return choice;
         }
 
@@ -421,15 +469,21 @@ namespace cis237assignment3
                 this.AstromechNumberShips();
             }
 
+            Console.Clear();
             //A valid selection has been chosen since the user is now out of the loop.
-            //returns the number of Ships selected.
+            //Returns the number of Ships selected.
             return Int32.Parse(input);
         }
 
         //Displays the entire list of Droids
-        public void DisplayAllDroids(String allDroids)
+        public void DisplayAllDroids(String[] allDroids)
         {
-            Console.WriteLine(allDroids);
+            //Console.WriteLine(allDroids);
+            Console.WriteLine();
+            foreach (String droidOutput in allDroids)
+            {
+                Console.WriteLine(droidOutput);
+            }
         }
 
         //Displays a error message if there were no Droids found

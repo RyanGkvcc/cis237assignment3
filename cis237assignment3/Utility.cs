@@ -63,24 +63,7 @@ namespace cis237assignment3
                 armOption = 1;
                 this.totalCost += ARM_PRICE;
             }
-
-            //get
-            //{
-            //    someNumber = 0m;
-            //    if (toolbox)
-            //    {
-            //        someNumber += 1m;
-            //    }
-            //    if (computerConnection)
-            //    {
-            //        someNumber += 1m;
-            //    }
-            //    if (arm)
-            //    {
-            //        someNumber += 1m;
-            //    }
-            //    return this.someNumber;
-            //}
+            
         }
     }
 }

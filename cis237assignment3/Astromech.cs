@@ -40,15 +40,6 @@ namespace cis237assignment3
             {
                 this.totalCost += (numberShips * COST_PER_SHIP);
             }
-            //get
-            //{
-            //    someNumber3 = 0m;
-            //    if (fireExtinquisher)
-            //    {
-            //        someNumber3 += 1m;
-            //    }
-            //    return this.someNumber3;
-            //}
         }
     }
 }

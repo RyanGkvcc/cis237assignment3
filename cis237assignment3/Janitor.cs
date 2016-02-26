@@ -53,19 +53,6 @@ namespace cis237assignment3
                 vacuumOption = 1;
                 this.totalCost += VACUUM_PRICE;
             }
-            //get
-            //{
-            //    someNumber2 = 0m;
-            //    if (trashCompactor)
-            //    {
-            //        someNumber2 += 1m;
-            //    }
-            //    if (vacuum)
-            //    {
-            //        someNumber2 += 1m;
-            //    }
-            //    return this.someNumber2;
-            //}
         }
     }
 }
