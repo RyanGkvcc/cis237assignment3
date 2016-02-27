@@ -14,6 +14,7 @@ namespace cis237assignment3
 
         //Constant for Cost per ship
         private const Decimal COST_PER_SHIP = 13m;
+        private const Decimal MODEL_COST = 400m;
 
         //private Decimal someNumber3;
 
@@ -32,6 +33,16 @@ namespace cis237assignment3
             return base.ToString() + "Fire Extinquisher: " + this.numberShips.ToString("N") + " @ " + COST_PER_SHIP.ToString("C") + Environment.NewLine +
                 "Total Cost: " + this.totalCost.ToString("C");
         }
+
+        //Overrides the parent ModelCost and sets the price for this model.
+        protected override decimal ModelCost
+        {
+            get
+            {
+                return MODEL_COST;               
+            }
+        }
+
 
         //Public override method to override the virtual Calculate Total Cost Droid method.
         public override void CalculateTotalCost()

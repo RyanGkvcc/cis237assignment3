@@ -13,6 +13,7 @@ namespace cis237assignment3
         
         //Constants for Cost per language
         private const Decimal COST_PER_LANGUAGE = 1m;
+        private const Decimal MODEL_COST = 100m;
 
         //4 parameter Constructor that uses the parent's constructor to do some of the work
         public Protocol(String material, String model, String color, Int32 numberLanguages) : base(material, model, color)
@@ -26,6 +27,15 @@ namespace cis237assignment3
         {
             return base.ToString() + "Number of Languages: " + numberLanguages.ToString("N") + " @ " + COST_PER_LANGUAGE.ToString("C") + Environment.NewLine +
                 "Total Cost: " + this.totalCost.ToString("C");
+        }
+
+        //Overrides the parent ModelCost and sets the price for this model.
+        protected override decimal ModelCost
+        {
+            get
+            {
+                return MODEL_COST;
+            }
         }
 
         //Public override method to override the virtual Calculate Total Cost Droid method.

@@ -16,6 +16,7 @@ namespace cis237assignment3
         private const Decimal TOOLBOX_PRICE = 1m;
         private const Decimal COMPUTERCONNECTION_PRICE = 3m;
         private const Decimal ARM_PRICE = 5m;
+        private const Decimal MODEL_COST = 200m;
 
         private Int32 toolboxOption;
         private Int32 computerConnectionOption;
@@ -39,6 +40,15 @@ namespace cis237assignment3
                 "Computer Connection: " + computerConnectionOption.ToString("N") + " @ " + COMPUTERCONNECTION_PRICE.ToString("C") + Environment.NewLine +
                 "Arm: " + armOption.ToString("N") + " @ " + ARM_PRICE.ToString("C") + Environment.NewLine +
                 "Total Cost: " + this.totalCost.ToString("C");
+        }
+
+        //Overrides the parent ModelCost and sets the price for this model.
+        protected override decimal ModelCost
+        {
+            get
+            {
+                return MODEL_COST;
+            }
         }
 
         //Public override method to override the virtual Calculate Total Cost Droid method.

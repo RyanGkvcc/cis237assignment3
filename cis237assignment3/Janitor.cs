@@ -14,6 +14,7 @@ namespace cis237assignment3
 
         private const Decimal TRASHCOMPACTOR_PRICE = 9m;
         private const Decimal VACUUM_PRICE = 11m;
+        private const Decimal MODEL_COST = 300m;
 
         private Int32 trashCompactorOption;
         private Int32 vacuumOption;
@@ -35,6 +36,15 @@ namespace cis237assignment3
             return base.ToString() + "Trash Compactor: " + trashCompactorOption.ToString("N") + " @ " + TRASHCOMPACTOR_PRICE.ToString("C") + Environment.NewLine +
                 "Vacuum: " + vacuumOption.ToString("N") + " @ " + VACUUM_PRICE.ToString("C") + Environment.NewLine + 
                 "Total Cost: " + this.totalCost.ToString("C");
+        }
+
+        //Overrides the parent ModelCost and sets the price for this model.
+        protected override decimal ModelCost
+        {
+            get
+            {
+                return MODEL_COST;
+            }
         }
 
         //Public override method to override the virtual Calculate Total Cost Droid method.

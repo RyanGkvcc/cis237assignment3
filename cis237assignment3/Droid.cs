@@ -15,6 +15,8 @@ namespace cis237assignment3
         protected Decimal baseCost;
         protected Decimal totalCost;
 
+        const Decimal MATERIAL_COST = 25m;
+
         //Properties for the backing fields
         public String Material
         {
@@ -73,8 +75,24 @@ namespace cis237assignment3
 
         public void CalculateBaseCost()
         {
-
+            this.baseCost = this.MaterialCost + this.ModelCost;
         }
+
+        //The Material Cost can be overriden by the children classes
+        protected virtual Decimal MaterialCost
+        {
+            get
+            {
+                return MATERIAL_COST;
+            }
+        }
+
+        //The Model Cost MUST be overridden by the children classes
+        protected abstract Decimal ModelCost
+        {
+            get;
+        }
+
 
         //This method is virtual to ensure that it can be overriden by the children classes.
         //It assigns the base cost to the total cost.
