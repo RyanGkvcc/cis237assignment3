@@ -63,7 +63,8 @@ namespace cis237assignment3
                     //If there is another droid to add, proceed to add it to the array.
                     if (droid != null)
                     {
-                        //Add the droid to the array.
+                        //Calcule the cost and add the droid to the array.
+                        droid.CalculateTotalCost();
                         allDroidsString[counter] = droid.ToString();
                         counter++;
                     }

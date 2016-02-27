@@ -70,7 +70,7 @@ namespace cis237assignment3
             return "Model: " + this.model + Environment.NewLine +
                 "Material: " + this.material + Environment.NewLine + 
                 "Color: " + this.color + Environment.NewLine + 
-                "Base Cost: " + this.totalCost.ToString("C") + Environment.NewLine;
+                "Base Cost: " + this.baseCost.ToString("C") + Environment.NewLine;
         }
 
         public void CalculateBaseCost()

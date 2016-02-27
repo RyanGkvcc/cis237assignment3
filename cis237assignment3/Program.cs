@@ -1,4 +1,25 @@
-﻿using System;
+﻿///Programmer:  Ryan Gowan
+///Date:        2/27/2016
+///POV:         What are you suppossed to learn from this project.
+///                 Console app, if/else statements, switch statements, 
+///                 Arrays, User Interface, Collections, Interface, Inheiritance,
+///                 Abstract classes, and Polymorphism.
+///             Populate collection of Droids that ara all similarly based on an abstract class, yet are different
+///             based on the user input. Have the ability to print out the entire collection of Droids, including the 
+///             price.
+///                            
+///BOV:         Purpose of this project, if any.
+///                 The ability to create an abstract class and manipulate other classes to inherit properties and methods from it.
+///                 The ability to implement a interface.
+///                 The ability to utilize Polymorphism.
+///                 The ability to display information within the console terminal.
+
+//  This project shows Documentation comments, above.
+/*  Notes:
+ *  ???/100
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
