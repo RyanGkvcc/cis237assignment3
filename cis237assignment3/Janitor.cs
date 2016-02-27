@@ -22,8 +22,8 @@ namespace cis237assignment3
         //private Decimal someNumber2;
 
         //8 parameter Constructor that uses the parent's constructor to do some of the work
-        public Janitor(String material, String model, String color, Boolean toolbox, Boolean computerConnection, Boolean arm, Boolean trashCompactor, Boolean vacuum)
-            : base(material, model, color, toolbox, computerConnection, arm)
+        public Janitor(String model, String material, String color, Boolean toolbox, Boolean computerConnection, Boolean arm, Boolean trashCompactor, Boolean vacuum)
+            : base(model, material, color, toolbox, computerConnection, arm)
         {
             this.trashCompactor = trashCompactor;
             this.vacuum = vacuum;
@@ -33,9 +33,9 @@ namespace cis237assignment3
         //ToString method to get some of it's work done.
         public override String ToString()
         {
-            return base.ToString() + "Trash Compactor: " + trashCompactorOption.ToString("N") + " @ " + TRASHCOMPACTOR_PRICE.ToString("C") + Environment.NewLine +
-                "Vacuum: " + vacuumOption.ToString("N") + " @ " + VACUUM_PRICE.ToString("C") + Environment.NewLine + 
-                "Total Cost: " + this.totalCost.ToString("C");
+            return base.ToString() + "Trash Compactor: " + trashCompactorOption.ToString("N0") + " @ " + TRASHCOMPACTOR_PRICE.ToString("C") + Environment.NewLine +
+                "Vacuum: " + vacuumOption.ToString("N0") + " @ " + VACUUM_PRICE.ToString("C") + Environment.NewLine + 
+                "Total Cost: " + this.totalCost.ToString("C") + Environment.NewLine;
         }
 
         //Overrides the parent ModelCost and sets the price for this model.
@@ -47,22 +47,36 @@ namespace cis237assignment3
             }
         }
 
+        protected Decimal JanitorOptionCost
+        {
+            get
+            {
+                Decimal optionCost = 0m;
+                trashCompactorOption = 0;
+                vacuumOption = 0;
+
+                if (trashCompactor)
+                {
+                    trashCompactorOption = 1;
+                    optionCost += TRASHCOMPACTOR_PRICE;
+                }
+                if (vacuum)
+                {
+                    vacuumOption = 1;
+                    optionCost += VACUUM_PRICE;
+                }
+
+                return optionCost;
+            }
+        }
+
         //Public override method to override the virtual Calculate Total Cost Droid method.
         public override void CalculateTotalCost()
         {
-            trashCompactorOption = 0;
-            vacuumOption = 0;
+            CalculateBaseCost();
+            this.totalCost = this.baseCost + UtilityOptionCost + JanitorOptionCost;
 
-            if (trashCompactor)
-            {
-                trashCompactorOption = 1;
-                this.totalCost += TRASHCOMPACTOR_PRICE;
-            }
-            if (vacuum)
-            {
-                vacuumOption = 1;
-                this.totalCost += VACUUM_PRICE;
-            }
+            
         }
     }
 }

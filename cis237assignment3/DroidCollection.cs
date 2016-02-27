@@ -21,30 +21,30 @@ namespace cis237assignment3
         }
 
         //Add new Protocol Droid to the Droid Collection and increase the length variable.
-        public void NewDroid(String material, String model, String color, Int32 numberLanguages)
+        public void NewDroid(String model, String material, String color, Int32 numberLanguages)
         {
-            droids[droidsLength] = new Protocol(material, model, color, numberLanguages);
+            droids[droidsLength] = new Protocol(model, material, color, numberLanguages);
             droidsLength++;
         }
 
         //Add new Utility Droid to the Droid Collection and increase the length variable.
-        public void NewDroid(String material, String model, String color, Boolean toolbox, Boolean computerConnection, Boolean arm)
+        public void NewDroid(String model, String material, String color, Boolean toolbox, Boolean computerConnection, Boolean arm)
         {
-            droids[droidsLength] = new Utility(material, model, color, toolbox, computerConnection, arm);
+            droids[droidsLength] = new Utility(model, material, color, toolbox, computerConnection, arm);
             droidsLength++;
         }
 
         //Add new Janitor Droid to the Droid Collection and increase the length variable.
-        public void NewDroid(String material, String model, String color, Boolean toolbox, Boolean computerConnection, Boolean arm, Boolean trashCompactor, Boolean vacuum)
+        public void NewDroid(String model, String material, String color, Boolean toolbox, Boolean computerConnection, Boolean arm, Boolean trashCompactor, Boolean vacuum)
         {
-            droids[droidsLength] = new Janitor(material, model, color, toolbox, computerConnection, arm, trashCompactor, vacuum);
+            droids[droidsLength] = new Janitor(model, material, color, toolbox, computerConnection, arm, trashCompactor, vacuum);
             droidsLength++;
         }
 
         //Add new Astromech Droid to the Droid Collection and increase the length variable.
-        public void NewDroid(String material, String model, String color, Boolean toolbox, Boolean computerConnection, Boolean arm, Boolean fireExtinquisher, Int32 numberShips)
+        public void NewDroid(String model, String material, String color, Boolean toolbox, Boolean computerConnection, Boolean arm, Boolean fireExtinquisher, Int32 numberShips)
         {
-            droids[droidsLength] = new Astromech(material, model, color, toolbox, computerConnection, arm, fireExtinquisher, numberShips);
+            droids[droidsLength] = new Astromech(model, material, color, toolbox, computerConnection, arm, fireExtinquisher, numberShips);
             droidsLength++;
         }
 

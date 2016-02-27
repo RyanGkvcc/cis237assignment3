@@ -9,13 +9,13 @@ namespace cis237assignment3
     abstract class Droid : IDroid
     {
         //Backing fields
-        protected String material;
         protected String model;
+        protected String material;
         protected String color;
         protected Decimal baseCost;
         protected Decimal totalCost;
 
-        const Decimal MATERIAL_COST = 25m;
+        //const Decimal MATERIAL_COST = 25m;
 
         //Properties for the backing fields
         public String Material
@@ -49,11 +49,11 @@ namespace cis237assignment3
         }
 
         //3 Parameter constructor
-        public Droid(String material, String model, String color)
+        public Droid(String model, String material,  String color)
         {
             //Assign the passed in values to the fields
-            this.material = material;
             this.model = model;
+            this.material = material;
             this.color = color;
         }
 
@@ -67,9 +67,9 @@ namespace cis237assignment3
         //It overrides the default ToString that every object gets for free!
         public override String ToString()
         {
-            return "Color: " + this.color + Environment.NewLine + 
+            return "Model: " + this.model + Environment.NewLine +
                 "Material: " + this.material + Environment.NewLine + 
-                "Model: " + this.model + Environment.NewLine + 
+                "Color: " + this.color + Environment.NewLine + 
                 "Base Cost: " + this.totalCost.ToString("C") + Environment.NewLine;
         }
 
@@ -79,11 +79,69 @@ namespace cis237assignment3
         }
 
         //The Material Cost can be overriden by the children classes
-        protected virtual Decimal MaterialCost
+        private Decimal MaterialCost
         {
             get
             {
-                return MATERIAL_COST;
+                Decimal materialCost = 0;
+                switch(this.material)
+                {
+                    case "Metal":
+                        {
+                            materialCost = 50m;
+                            break;
+                        }
+                    case "Stone":
+                        {
+                            materialCost = 45m;
+                            break;
+                        }
+                    case "Carbon Fiber":
+                        {
+                            materialCost = 40m;
+                            break;
+                        }
+                    case "Wood":
+                        {
+                            materialCost = 35m;
+                            break;
+                        }
+                    case "Plastic":
+                        {
+                            materialCost = 30m;
+                            break;
+                        }
+                }
+                switch(this.color)
+                {
+                    case "Metallic Silver":
+                        {
+                            materialCost += 25m;
+                            break;
+                        }
+                    case "Dusty Brown":
+                        {
+                            materialCost += 20m;
+                            break;
+                        }
+                    case "Stealth Black":
+                        {
+                            materialCost += 15m;
+                            break;
+                        }
+                    case "Natural Woodgrain":
+                        {
+                            materialCost += 10m;
+                            break;
+                        }
+                    case "Fluorscent Neon":
+                        {
+                            materialCost += 5m;
+                            break;
+                        }
+                }
+
+                return materialCost;
             }
         }
 
@@ -98,6 +156,7 @@ namespace cis237assignment3
         //It assigns the base cost to the total cost.
         public virtual void CalculateTotalCost()
         {
+            CalculateBaseCost();
             this.totalCost = this.baseCost;
         }
     }

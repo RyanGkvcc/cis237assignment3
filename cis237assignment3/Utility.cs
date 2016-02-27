@@ -25,7 +25,7 @@ namespace cis237assignment3
         //private Decimal someNumber;
 
         //6 parameter Constructor that uses the parent's constructor to do some of the work
-        public Utility(String material, String model, String color, Boolean toolbox, Boolean computerConnection, Boolean arm) : base(material, model, color)
+        public Utility(String model, String material, String color, Boolean toolbox, Boolean computerConnection, Boolean arm) : base(model, material, color)
         {
             this.toolbox = toolbox;
             this.computerConnection = computerConnection;
@@ -36,10 +36,10 @@ namespace cis237assignment3
         //ToString method to get some of it's work done.
         public override String ToString()
         {
-            return base.ToString() + "Toolbox: " + toolboxOption.ToString("N") + " @ " + TOOLBOX_PRICE.ToString("C") + Environment.NewLine +
-                "Computer Connection: " + computerConnectionOption.ToString("N") + " @ " + COMPUTERCONNECTION_PRICE.ToString("C") + Environment.NewLine +
-                "Arm: " + armOption.ToString("N") + " @ " + ARM_PRICE.ToString("C") + Environment.NewLine +
-                "Total Cost: " + this.totalCost.ToString("C");
+            return base.ToString() + "Toolbox: " + toolboxOption.ToString("N0") + " @ " + TOOLBOX_PRICE.ToString("C") + Environment.NewLine +
+                "Computer Connection: " + computerConnectionOption.ToString("N0") + " @ " + COMPUTERCONNECTION_PRICE.ToString("C") + Environment.NewLine +
+                "Arm: " + armOption.ToString("N0") + " @ " + ARM_PRICE.ToString("C") + Environment.NewLine +
+                "Total Cost: " + this.totalCost.ToString("C") + Environment.NewLine;
         }
 
         //Overrides the parent ModelCost and sets the price for this model.
@@ -51,28 +51,40 @@ namespace cis237assignment3
             }
         }
 
+        protected Decimal UtilityOptionCost
+        {
+            get
+            {
+                Decimal optionCost = 0m;
+                toolboxOption = 0;
+                computerConnectionOption = 0;
+                armOption = 0;
+
+                if (toolbox)
+                {
+                    toolboxOption = 1;
+                    optionCost += TOOLBOX_PRICE;
+                }
+                if (computerConnection)
+                {
+                    computerConnectionOption = 1;
+                    optionCost += COMPUTERCONNECTION_PRICE;
+                }
+                if (arm)
+                {
+                    armOption = 1;
+                    optionCost += ARM_PRICE;
+                }
+                return optionCost;
+
+            }
+       }
+
         //Public override method to override the virtual Calculate Total Cost Droid method.
         public override void CalculateTotalCost()
         {
-            toolboxOption = 0;
-            computerConnectionOption = 0;
-            armOption = 0;
-
-            if (toolbox)
-            {
-                toolboxOption = 1;
-                this.totalCost += TOOLBOX_PRICE;
-            }
-            if (computerConnection)
-            {
-                computerConnectionOption = 1;
-                this.totalCost += COMPUTERCONNECTION_PRICE;
-            }
-            if (arm)
-            {
-                armOption = 1;
-                this.totalCost += ARM_PRICE;
-            }
+            CalculateBaseCost();
+            this.totalCost = this.UtilityOptionCost + this.baseCost;
             
         }
     }
