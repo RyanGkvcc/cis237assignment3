@@ -34,8 +34,7 @@ namespace cis237assignment3
         public override String ToString()
         {
             return base.ToString() + "Trash Compactor: " + trashCompactorOption.ToString("N0") + " @ " + TRASHCOMPACTOR_PRICE.ToString("C") + Environment.NewLine +
-                "Vacuum: " + vacuumOption.ToString("N0") + " @ " + VACUUM_PRICE.ToString("C") + Environment.NewLine + 
-                "Total Cost: " + this.totalCost.ToString("C") + Environment.NewLine;
+                "Vacuum: " + vacuumOption.ToString("N0") + " @ " + VACUUM_PRICE.ToString("C") + Environment.NewLine;
         }
 
         //Overrides the parent ModelCost and sets the price for this model.

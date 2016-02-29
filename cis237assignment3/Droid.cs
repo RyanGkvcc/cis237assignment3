@@ -70,7 +70,10 @@ namespace cis237assignment3
             return "Model: " + this.model + Environment.NewLine +
                 "Material: " + this.material + Environment.NewLine + 
                 "Color: " + this.color + Environment.NewLine + 
-                "Base Cost: " + this.baseCost.ToString("C") + Environment.NewLine;
+                "Base Cost: " + this.baseCost.ToString("C") + Environment.NewLine +
+                "Total Cost: " + this.totalCost.ToString("C") + Environment.NewLine + 
+                "Options: " + Environment.NewLine + 
+                "---------" + Environment.NewLine;
         }
 
         public void CalculateBaseCost()
@@ -116,27 +119,27 @@ namespace cis237assignment3
                 {
                     case "Metallic Silver":
                         {
-                            materialCost += 25m;
+                            materialCost = 25m;
                             break;
                         }
                     case "Dusty Brown":
                         {
-                            materialCost += 20m;
+                            materialCost = 20m;
                             break;
                         }
                     case "Stealth Black":
                         {
-                            materialCost += 15m;
+                            materialCost = 15m;
                             break;
                         }
                     case "Natural Woodgrain":
                         {
-                            materialCost += 10m;
+                            materialCost = 10m;
                             break;
                         }
                     case "Fluorscent Neon":
                         {
-                            materialCost += 5m;
+                            materialCost = 5m;
                             break;
                         }
                 }

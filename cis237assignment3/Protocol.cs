@@ -25,8 +25,7 @@ namespace cis237assignment3
         //toString method to get some of it's work done.
         public override String ToString()
         {
-            return base.ToString() + "Number of Languages: " + numberLanguages.ToString("N0") + " @ " + COST_PER_LANGUAGE.ToString("C") + Environment.NewLine +
-                "Total Cost: " + this.totalCost.ToString("C") + Environment.NewLine;
+            return base.ToString() + "Number of Languages: " + numberLanguages.ToString("N0") + " @ " + COST_PER_LANGUAGE.ToString("C") + Environment.NewLine;
         }
 
         //Overrides the parent ModelCost and sets the price for this model.

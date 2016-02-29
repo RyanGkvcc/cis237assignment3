@@ -38,8 +38,7 @@ namespace cis237assignment3
         {
             return base.ToString() + "Toolbox: " + toolboxOption.ToString("N0") + " @ " + TOOLBOX_PRICE.ToString("C") + Environment.NewLine +
                 "Computer Connection: " + computerConnectionOption.ToString("N0") + " @ " + COMPUTERCONNECTION_PRICE.ToString("C") + Environment.NewLine +
-                "Arm: " + armOption.ToString("N0") + " @ " + ARM_PRICE.ToString("C") + Environment.NewLine +
-                "Total Cost: " + this.totalCost.ToString("C") + Environment.NewLine;
+                "Arm: " + armOption.ToString("N0") + " @ " + ARM_PRICE.ToString("C") + Environment.NewLine;
         }
 
         //Overrides the parent ModelCost and sets the price for this model.

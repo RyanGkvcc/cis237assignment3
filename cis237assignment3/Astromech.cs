@@ -33,8 +33,7 @@ namespace cis237assignment3
         public override String ToString()
         {
             return base.ToString() + "Fire Extinquisher: " + this.numberExtinquishers.ToString("N0") + " @ " + COST_PER_EXTINQUISHER.ToString("C") + Environment.NewLine + 
-                "Number of Ships: " + this.numberShips.ToString("N0") + " @ " + COST_PER_SHIP.ToString("C") + Environment.NewLine +
-                "Total Cost: " + this.totalCost.ToString("C") + Environment.NewLine;
+                "Number of Ships: " + this.numberShips.ToString("N0") + " @ " + COST_PER_SHIP.ToString("C") + Environment.NewLine;
         }
 
         //Overrides the parent ModelCost and sets the price for this model.
