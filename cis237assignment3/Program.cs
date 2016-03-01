@@ -31,6 +31,7 @@ namespace cis237assignment3
     {
         static void Main(string[] args)
         {
+            //Variables to be used throughout
             String model = String.Empty;
             String material = String.Empty;
             String color = String.Empty;
@@ -45,17 +46,18 @@ namespace cis237assignment3
             //Constant size for the Droid Collection
             const Int32 DROID_COLLECTION_SIZE = 100;
 
-            //Create an instance of the UserInterface class
+            //Create an instance of the UserInterface and DroidCollection classes
             UserInterface userInterface = new UserInterface();
-
-
             DroidCollection droidCollection = new DroidCollection(DROID_COLLECTION_SIZE);
 
+            //Prompt for user input.
             Int32 choice1 = userInterface.FirstMenu();
             Int32 type;
 
+            //While the user has not chosen to exit the program.
             while (choice1 != 3)
             {
+                //If the user has chosen to ADD a Droid.
                 if (choice1 == 1)
                 {
                     type = userInterface.BeginBuild();
@@ -108,6 +110,7 @@ namespace cis237assignment3
                             }
                     }
                 }
+                //If the user has chosen to PRINT the Droid list.
                 if (choice1 == 2)
                 {
                     string[] allDroids = droidCollection.AquireAllDroids();
@@ -121,6 +124,7 @@ namespace cis237assignment3
                     }
                     
                 }
+                //Prompt the user to make a choice from the first menu again.
                 choice1 = userInterface.FirstMenu();
             }
         }

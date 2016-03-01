@@ -19,9 +19,7 @@ namespace cis237assignment3
         private Int32 trashCompactorOption;
         private Int32 vacuumOption;
         
-        //private Decimal someNumber2;
-
-        //8 parameter Constructor that uses the parent's constructor to do some of the work
+        //8 parameter Constructor that uses the parent's constructor to do some of the work.
         public Janitor(String model, String material, String color, Boolean toolbox, Boolean computerConnection, Boolean arm, Boolean trashCompactor, Boolean vacuum)
             : base(model, material, color, toolbox, computerConnection, arm)
         {
@@ -37,7 +35,7 @@ namespace cis237assignment3
                 "Vacuum: " + vacuumOption.ToString("N0") + " @ " + VACUUM_PRICE.ToString("C") + Environment.NewLine;
         }
 
-        //Overrides the parent ModelCost and sets the price for this model.
+        //Overrides the parent ModelCost and returns the price for this model.
         protected override decimal ModelCost
         {
             get
@@ -46,6 +44,7 @@ namespace cis237assignment3
             }
         }
 
+        //Returns the option cost for the Janitor being built.
         protected Decimal JanitorOptionCost
         {
             get
@@ -74,8 +73,6 @@ namespace cis237assignment3
         {
             CalculateBaseCost();
             this.totalCost = this.baseCost + UtilityOptionCost + JanitorOptionCost;
-
-            
         }
     }
 }

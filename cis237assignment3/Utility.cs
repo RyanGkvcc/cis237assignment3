@@ -22,9 +22,7 @@ namespace cis237assignment3
         private Int32 computerConnectionOption;
         private Int32 armOption;
 
-        //private Decimal someNumber;
-
-        //6 parameter Constructor that uses the parent's constructor to do some of the work
+        //6 parameter Constructor that uses the parent's constructor to do some of the work.
         public Utility(String model, String material, String color, Boolean toolbox, Boolean computerConnection, Boolean arm) : base(model, material, color)
         {
             this.toolbox = toolbox;
@@ -41,7 +39,7 @@ namespace cis237assignment3
                 "Arm: " + armOption.ToString("N0") + " @ " + ARM_PRICE.ToString("C") + Environment.NewLine;
         }
 
-        //Overrides the parent ModelCost and sets the price for this model.
+        //Overrides the parent ModelCost and returns the price for this model.
         protected override decimal ModelCost
         {
             get
@@ -50,6 +48,7 @@ namespace cis237assignment3
             }
         }
 
+        //Returns the option cost for the Utility being built.
         protected Decimal UtilityOptionCost
         {
             get
@@ -84,7 +83,6 @@ namespace cis237assignment3
         {
             CalculateBaseCost();
             this.totalCost = this.UtilityOptionCost + this.baseCost;
-            
         }
     }
 }

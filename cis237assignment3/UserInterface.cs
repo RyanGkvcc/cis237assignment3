@@ -8,15 +8,16 @@ namespace cis237assignment3
 {
     class UserInterface
     {
+        //Variables to be used throughout.
         String input;
         String range;
         String option;
         Boolean choice;
 
-        //Displays the menu for the user to choose to build a Droid or print the inventory
+        //Displays the menu for the user to choose to build a Droid or print the inventory.
         public Int32 FirstMenu()
         {
-            //Resets the input variable
+            //Resets the input variable.
             input = String.Empty;
             //Displays the first menu
             Console.WriteLine("What would you like to do?");
@@ -30,7 +31,7 @@ namespace cis237assignment3
             //Validates the input or we get to try again.
             while (input != "1" && input != "2" && input != "3")
             {
-                //Tell them that they did not enter a valid choice
+                //Tell the user that they did not enter a valid choice.
                 range = "(1-3).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
@@ -42,14 +43,14 @@ namespace cis237assignment3
             return Int32.Parse(input);
         }
 
-        //Displays a error message and the valid choices
+        //Displays a error message and the valid choices.
         private void WrongSelection(String range)
         {
             Console.WriteLine("That is not a valid entry");
             Console.WriteLine("Please make a valid choice {0}", range);
             Console.WriteLine();
         }
-
+        //Displays a message telling the user that the add was successful.
         public void DroidAddSuccess()
         {
             Console.WriteLine();
@@ -75,7 +76,7 @@ namespace cis237assignment3
             //Validates the input or we get to try again.
             while (input != "1" && input != "2" && input != "3" && input != "4")
             {
-                //Tell them that they did not enter a valid choice
+                //Tell the user that they did not enter a valid choice.
                 range = "(1-4).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
@@ -83,14 +84,14 @@ namespace cis237assignment3
             }
 
             Console.Clear();
-            //A valid selection has been chosen since the user is now out of the loop
+            //A valid selection has been chosen since the user is now out of the loop.
             return Int32.Parse(input);
         }
 
         //Displays the menu for the user to select a material.
         public String MaterialOption()
         {
-            //Resets the input variable
+            //Resets the input variable.
             input = String.Empty;
             //Displays the menu for the user to select a material for their Droid.
             Console.WriteLine("What material would you like to use to build your Droid?");
@@ -106,14 +107,14 @@ namespace cis237assignment3
             //Validates the input or we get to try again.
             while (input != "1" && input != "2" && input != "3" && input != "4" && input != "5")
             {
-                //Tell them that they did not enter a valid choice
+                //Tell the user that they did not enter a valid choice.
                 range = "(1-5).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
                 this.MaterialOption();
             }
 
-            //A valid selection has been chosen since the user is now out of the loop
+            //A valid selection has been chosen since the user is now out of the loop.
             switch (input)
             {
                 case "1":
@@ -152,7 +153,7 @@ namespace cis237assignment3
         //Displays the menu for the user to select a color.
         public String ColorOption()
         {
-            //Resets the input variable
+            //Resets the input variable.
             input = String.Empty;
             //Displays the menu for the user to select a color for their Droid.
             Console.WriteLine("What color would you like your Droid to be?");
@@ -168,14 +169,14 @@ namespace cis237assignment3
             //Validates the input or we get to try again.
             while (input != "1" && input != "2" && input != "3" && input != "4" && input != "5")
             {
-                //Tell them that they did not enter a valid choice
+                //Tell the user that they did not enter a valid choice.
                 range = "(1-5).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
                 this.ColorOption();
             }
 
-            //A valid selection has been chosen since the user is now out of the loop
+            //A valid selection has been chosen since the user is now out of the loop.
             switch (input)
             {
                 case "1":
@@ -214,7 +215,7 @@ namespace cis237assignment3
         //Displays the menu for the user to select how many languages the Droid should have.
         public Int32 ProtocolNumberLanguages()
         {
-            //Resets the input variable
+            //Resets the input variable.
             input = String.Empty;
             //Displays the menu for the user to select a how many languages their Droid should have.
             Console.WriteLine("How many languages would you like available on your Protocol?");
@@ -225,7 +226,7 @@ namespace cis237assignment3
             //Validates the input or we get to try again.
             while (input != "1" && input != "2" && input != "3" && input != "4" && input != "5")
             {
-                //Tell them that they did not enter a valid choice
+                //Tell the user that they did not enter a valid choice.
                 range = "(1-5).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
@@ -241,7 +242,7 @@ namespace cis237assignment3
         //Displays the menu for the user to select if they want a Toolbox on their Droid.
         public Boolean UtilityToolbox()
         {
-            //Resets the input variable
+            //Resets the input variable.
             input = String.Empty;
             choice = false;
             //Displays the menu for the user choose if they want a Toolbox on their Droid.
@@ -255,7 +256,7 @@ namespace cis237assignment3
             //Validates the input or we get to try again.
             while (input != "1" && input != "2")
             {
-                //Tell them that they did not enter a valid choice
+                //Tell the user that they did not enter a valid choice.
                 range = "(1-2).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
@@ -276,7 +277,7 @@ namespace cis237assignment3
         //Displays the menu for the user to select if they want a Toolbox on their Droid.
         public Boolean UtilityComputerConnection()
         {
-            //Resets the input variable
+            //Resets the input variable.
             input = String.Empty;
             choice = false;
             //Displays the menu for the user choose if they want a Computer Connection on their Droid.
@@ -290,7 +291,7 @@ namespace cis237assignment3
             //Validates the input or we get to try again.
             while (input != "1" && input != "2")
             {
-                //Tell them that they did not enter a valid choice
+                //Tell the user that they did not enter a valid choice.
                 range = "(1-2).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
@@ -311,7 +312,7 @@ namespace cis237assignment3
         //Displays the menu for the user to select if they want a Arm on their Droid.
         public Boolean UtilityArm()
         {
-            //Resets the input variable
+            //Resets the input variable.
             input = String.Empty;
             choice = false;
             //Displays the menu for the user choose if they want a Arm on their Droid.
@@ -325,7 +326,7 @@ namespace cis237assignment3
             //Validates the input or we get to try again.
             while (input != "1" && input != "2")
             {
-                //Tell them that they did not enter a valid choice
+                //Tell the user that they did not enter a valid choice.
                 range = "(1-2).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
@@ -346,7 +347,7 @@ namespace cis237assignment3
         //Displays the menu for the user to select if they want a Trash Compactor on their Droid.
         public Boolean JanitorTrashCompactor()
         {
-            //Resets the input variable
+            //Resets the input variable.
             input = String.Empty;
             choice = false;
             //Displays the menu for the user choose if they want a Trash Compactor on their Droid.
@@ -360,7 +361,7 @@ namespace cis237assignment3
             //Validates the input or we get to try again.
             while (input != "1" && input != "2")
             {
-                //Tell them that they did not enter a valid choice
+                //Tell the user that they did not enter a valid choice
                 range = "(1-2).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
@@ -381,7 +382,7 @@ namespace cis237assignment3
         //Displays the menu for the user to select if they want a Vacuum on their Droid.
         public Boolean JanitorVacuum()
         {
-            //Resets the input variable
+            //Resets the input variable.
             input = String.Empty;
             choice = false;
             //Displays the menu for the user choose if they want a Vacuum on their Droid.
@@ -395,7 +396,7 @@ namespace cis237assignment3
             //Validates the input or we get to try again.
             while (input != "1" && input != "2")
             {
-                //Tell them that they did not enter a valid choice
+                //Tell the user that they did not enter a valid choice.
                 range = "(1-2).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
@@ -416,7 +417,7 @@ namespace cis237assignment3
         //Displays the menu for the user to select if they want a Fire Extinquisher on their Droid.
         public Boolean AstromechFireExtinquisher()
         {
-            //Resets the input variable
+            //Resets the input variable.
             input = String.Empty;
             choice = false;
             //Displays the menu for the user choose if they want a Fire Extinquisher on their Droid.
@@ -430,7 +431,7 @@ namespace cis237assignment3
             //Validates the input or we get to try again.
             while (input != "1" && input != "2")
             {
-                //Tell them that they did not enter a valid choice
+                //Tell the user that they did not enter a valid choice.
                 range = "(1-2).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
@@ -451,7 +452,7 @@ namespace cis237assignment3
         //Displays the menu for the user to select how many Ships their Droid should have.
         public Int32 AstromechNumberShips()
         {
-            //Resets the input variable
+            //Resets the input variable.
             input = String.Empty;
             //Displays the menu for the user to select a how many Ships their Droid should have.
             Console.WriteLine("How many Ships would you like available on your Astromech?");
@@ -462,7 +463,7 @@ namespace cis237assignment3
             //Validates the input or we get to try again.
             while (input != "1" && input != "2" && input != "3" && input != "4" && input != "5" && input != "6")
             {
-                //Tell them that they did not enter a valid choice
+                //Tell the user that they did not enter a valid choice.
                 range = "(1-6).";
                 this.WrongSelection(range);
                 //Reprint the menu for the user.
@@ -475,10 +476,9 @@ namespace cis237assignment3
             return Int32.Parse(input);
         }
 
-        //Displays the entire list of Droids
+        //Displays the entire list of Droids.
         public void DisplayAllDroids(String[] allDroids)
         {
-            //Console.WriteLine(allDroids);
             Console.WriteLine();
             foreach (String droidOutput in allDroids)
             {
@@ -486,7 +486,7 @@ namespace cis237assignment3
             }
         }
 
-        //Displays a error message if there were no Droids found
+        //Displays a error message if there were no Droids found.
         public void DisplayNoDroidsError()
         {
             Console.WriteLine();

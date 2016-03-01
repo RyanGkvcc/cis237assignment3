@@ -13,14 +13,12 @@ namespace cis237assignment3
         private Int32 numberExtinquishers = 0;
         private Int32 numberShips;
 
-        //Constant for Cost per fire extinquisher and Cost per ship
+        //Constant for Cost per fire extinquisher and Cost per ship.
         private const Decimal COST_PER_EXTINQUISHER = 13m;
         private const Decimal COST_PER_SHIP = 15m;
         private const Decimal MODEL_COST = 400m;
 
-        //private Decimal someNumber3;
-
-        //8 parameter Constructor that uses the parent's constructor to do some of the work
+        //8 parameter Constructor that uses the parent's constructor to do some of the work.
         public Astromech(String model, String material,  String color, Boolean toolbox, Boolean computerConnection, Boolean arm, Boolean fireExtinquisher, Int32 numberShips)
             : base (model, material, color, toolbox, computerConnection, arm)
         {
@@ -36,7 +34,7 @@ namespace cis237assignment3
                 "Number of Ships: " + this.numberShips.ToString("N0") + " @ " + COST_PER_SHIP.ToString("C") + Environment.NewLine;
         }
 
-        //Overrides the parent ModelCost and sets the price for this model.
+        //Overrides the parent ModelCost and returns the price for this model.
         protected override decimal ModelCost
         {
             get
@@ -45,6 +43,7 @@ namespace cis237assignment3
             }
         }
 
+        //Returns the option cost for the Astromech being built.
         protected Decimal AstromechOptionCost
         {
             get
@@ -67,7 +66,6 @@ namespace cis237assignment3
         {
             CalculateBaseCost();
             this.totalCost = this.baseCost + UtilityOptionCost + AstromechOptionCost;
-            
         }
     }
 }

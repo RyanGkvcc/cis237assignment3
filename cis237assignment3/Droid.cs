@@ -15,8 +15,6 @@ namespace cis237assignment3
         protected Decimal baseCost;
         protected Decimal totalCost;
 
-        //const Decimal MATERIAL_COST = 25m;
-
         //Properties for the backing fields
         public String Material
         {
@@ -48,23 +46,23 @@ namespace cis237assignment3
             set { totalCost = value; }
         }
 
-        //3 Parameter constructor
+        //3 Parameter constructor.
         public Droid(String model, String material,  String color)
         {
-            //Assign the passed in values to the fields
+            //Assign the passed in values to the fields.
             this.model = model;
             this.material = material;
             this.color = color;
         }
 
-        //Default constructor
+        //Default constructor.
         public Droid()
         {
             //Lets just leave this blank
         }
 
-        //Override method that will print all of the fields
-        //It overrides the default ToString that every object gets for free!
+        //Override method that will print all of the fields.
+        //It overrides the default ToString.
         public override String ToString()
         {
             return "Model: " + this.model + Environment.NewLine +
@@ -76,12 +74,13 @@ namespace cis237assignment3
                 "---------" + Environment.NewLine;
         }
 
+        //Establishes the base cost for the Droid being built.
         public void CalculateBaseCost()
         {
             this.baseCost = this.MaterialCost + this.ModelCost;
         }
 
-        //The Material Cost can be overriden by the children classes
+        //Returns the Material Cost of the Droid being built based on the user selection.
         private Decimal MaterialCost
         {
             get
@@ -148,7 +147,7 @@ namespace cis237assignment3
             }
         }
 
-        //The Model Cost MUST be overridden by the children classes
+        //The Model Cost MUST be overridden by the children classes.
         protected abstract Decimal ModelCost
         {
             get;

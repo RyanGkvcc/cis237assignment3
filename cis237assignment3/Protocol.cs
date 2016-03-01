@@ -15,7 +15,7 @@ namespace cis237assignment3
         private const Decimal COST_PER_LANGUAGE = 1m;
         private const Decimal MODEL_COST = 100m;
 
-        //4 parameter Constructor that uses the parent's constructor to do some of the work
+        //4 parameter Constructor that uses the parent's constructor to do some of the work.
         public Protocol(String model, String material, String color, Int32 numberLanguages) : base(model, material, color)
         {
             this.numberLanguages = numberLanguages;
@@ -28,7 +28,7 @@ namespace cis237assignment3
             return base.ToString() + "Number of Languages: " + numberLanguages.ToString("N0") + " @ " + COST_PER_LANGUAGE.ToString("C") + Environment.NewLine;
         }
 
-        //Overrides the parent ModelCost and sets the price for this model.
+        //Overrides the parent ModelCost and returns the price for this model.
         protected override decimal ModelCost
         {
             get
@@ -37,11 +37,25 @@ namespace cis237assignment3
             }
         }
 
+        //Returns the option cost for the Protocol being built.
+        protected Decimal ProtocolOptionCost
+        {
+            get
+            {
+                Decimal optionCost = 0m;
+                
+                optionCost = this.numberLanguages * COST_PER_LANGUAGE;
+                
+                return optionCost;
+            }
+        }
+
         //Public override method to override the virtual Calculate Total Cost Droid method.
         public override void CalculateTotalCost()
         {
             CalculateBaseCost();
-            this.totalCost = (this.numberLanguages * COST_PER_LANGUAGE) + this.baseCost;
+            //this.totalCost = (this.numberLanguages * COST_PER_LANGUAGE) + this.baseCost;
+            this.totalCost = this.ProtocolOptionCost + this.baseCost;
         }
     }
 }
