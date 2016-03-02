@@ -16,24 +16,28 @@ namespace cis237assignment3
         protected Decimal totalCost;
 
         //Properties for the backing fields
+        //Not currently used.
         public String Material
         {
             get { return material; }
             set { material = value; }
         }
 
+        //Not currently used.
         public String Model
         {
             get { return model; }
             set { model = value; }
         }
 
+        //Not currently used.
         public String Color
         {
             get { return color; }
             set { color = value; }
         }
 
+        //Not currently used.
         public Decimal BaseCost
         {
             get { return baseCost; }
@@ -56,6 +60,7 @@ namespace cis237assignment3
         }
 
         //Default constructor.
+        //Not currently used.
         public Droid()
         {
             //Lets just leave this blank
